@@ -337,9 +337,12 @@ margin: 3px 0px;
     width: 20px;
     cursor: pointer;
     background: none;
+    z-index: 5;
+    
 }
-.item-list-dropmenu svg{
-    cursor: pointer;
+.item-list-dropmenu .dropmenu-btn .menu-icon{
+    /* cursor: pointer; */
+    z-index: 4;
 }
 
 .content-pagination {
@@ -420,7 +423,7 @@ border-radius: 4px;
     padding: 8px 0;
     z-index: 100;
 }
-.dropdownmenu.dropdownmenu._active{
+.dropdownmenu._active{
     /* visibility: visible; */
     display: flex;
 }

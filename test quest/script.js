@@ -67,11 +67,11 @@ window.addEventListener("DOMContentLoaded", function () {
                 <div class="item-list-dropmenu">
                     
 
-                    <button type="button" class='dropmenu-btn'><svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <button type="button" class='dropmenu-btn'><span class='menu-icon'><svg class='menu-icon' width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2Z" fill="black" fill-opacity="0.5"/>
                         <path d="M4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9Z" fill="black" fill-opacity="0.5"/>
                         <path d="M2 18C3.10457 18 4 17.1046 4 16C4 14.8954 3.10457 14 2 14C0.895431 14 0 14.8954 0 16C0 17.1046 0.895431 18 2 18Z" fill="black" fill-opacity="0.5"/>
-                        </svg></button>
+                        </svg></span></button>
                 </div>
                 <div id="dropMenu${id}" class="dropdownmenu dropdownmenu-content">
                     <a href="#" class="dropdownmenu__item"><span><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -104,11 +104,11 @@ window.addEventListener("DOMContentLoaded", function () {
                     <div class="item-list-dropmenu">
                         
 
-                        <button type="button" class='dropmenu-btn'><svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <button type="button" class='dropmenu-btn'><span class='menu-icon'><svg class='menu-icon' width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M4 2C4 3.10457 3.10457 4 2 4C0.895431 4 0 3.10457 0 2C0 0.895431 0.895431 0 2 0C3.10457 0 4 0.895431 4 2Z" fill="black" fill-opacity="0.5"/>
                             <path d="M4 9C4 10.1046 3.10457 11 2 11C0.895431 11 0 10.1046 0 9C0 7.89543 0.895431 7 2 7C3.10457 7 4 7.89543 4 9Z" fill="black" fill-opacity="0.5"/>
                             <path d="M2 18C3.10457 18 4 17.1046 4 16C4 14.8954 3.10457 14 2 14C0.895431 14 0 14.8954 0 16C0 17.1046 0.895431 18 2 18Z" fill="black" fill-opacity="0.5"/>
-                            </svg></button>
+                            </svg></span></button>
                     </div>
                     <div id="dropMenu${id}" class="dropdownmenu dropdownmenu-content">
                         <a href="#" class="dropdownmenu__item"><span><svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -168,13 +168,29 @@ function displayPagesTitle(){
 
 function dropbenuButtons (){
     const dropmenuBtn = contentList.querySelectorAll('.dropmenu-btn')
-    console.log(dropmenuBtn)
-    dropmenuBtn.forEach(elem => {
-        elem.addEventListener('click', ()=>{
-            console.log('click')
+    
+    dropmenuBtn.forEach((elem,i)=> {
+        elem.addEventListener('click', (e)=>{
+            console.log(i)
+           contentList.querySelectorAll('.dropdownmenu').forEach(item=>{
+              item.classList.remove('_active')
+           })
+           const activeDropmenu = document.getElementById(`dropMenu${i}`)
+    activeDropmenu.classList.add('_active')
         })
     });
-
-    const activeDropmenu = document.getElementById('dropMenu2')
-    activeDropmenu.classList.add('_active')
+    
+    
 }
+
+document.addEventListener('click',function (e) {
+   
+    
+    if (e.target.className !== 'dropdownmenu' && e.target.className !== 'dropmenu-btn' 
+    && e.target.className !=='menu-icon') {
+        contentList.querySelectorAll('.dropdownmenu').forEach(item=>{
+            
+            item.classList.remove('_active')
+        })
+    }
+});
