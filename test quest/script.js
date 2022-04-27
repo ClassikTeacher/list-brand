@@ -187,7 +187,7 @@ document.addEventListener('click',function (e) {
     const cvg = contentList.querySelectorAll('svg')
     
     if (e.target.className !== 'dropdownmenu' && e.target.className !== 'dropmenu-btn' 
-    && e.target.className !=='menu-icon' && !cvg) {
+    && e.target.className !=='menu-icon') {
         contentList.querySelectorAll('.dropdownmenu').forEach(item=>{
             
             item.classList.remove('_active')
