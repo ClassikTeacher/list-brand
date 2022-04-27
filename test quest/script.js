@@ -6,31 +6,31 @@ const listBtands = [
     published: true
 },
 {
-    img: "/img/Avatar.jpg",
+    img: "./img/Avatar.jpg",
     title: 'Lobster Roll Combo',
     status: 'published',
     published: true
 },
 {
-    img: "/img/Avatar-3.jpg",
+    img: "./img/Avatar-3.jpg",
     title: 'Vegetable Salad',
     status: 'not published',
     published: false
 },
 {
-    img: "/img/Avatar.jpg",
+    img: "./img/Avatar.jpg",
     title: 'Orange Fresh',
     status: 'published',
     published: true
 },
 {
-    img: "/img/Avatar.jpg",
+    img: "./img/Avatar.jpg",
     title: 'Lobster Roll Combo',
     status: 'published',
     published: true
 },
 {
-    img: "/img/Avatar-6.jpg",
+    img: "./img/Avatar-6.jpg",
     title: 'Lobster Roll Combo',
     status: 'not published',
     published: false
